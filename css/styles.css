@@ -1,0 +1,332 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-image: linear-gradient(to right top, #249a21, #228a20, #217a1f, #1f6b1d, #1d5c1b);
+}
+
+header {
+    background-image: linear-gradient(to right top, #38a935, #339930, #2d892b, #287926, #236a21);
+    color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.logo {
+    width: 7rem;
+    height: auto;
+}
+
+nav {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+.section-index {
+    position: relative;
+    height: 30vh;
+    background-image: url('../assets/img/gringo\'s_foto_fachada.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Le metemos un toque de desenfoque a la imagen */
+    /* filter: blur(3px); */ 
+    /* Pendiente: averiguar como aplico el blur solo a la img */
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.718);
+    padding: 20px 30px;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+/* H2 general del main, para Ofertas */
+main h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    margin-bottom: 2rem;
+}
+
+main {
+    padding: 2.5rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.oferta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.oferta-tarjeta {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    color: #333;
+}
+
+.oferta-tarjeta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.oferta-info {
+    margin-top: 1rem;
+}
+
+.oferta-titulo {
+    font-size: 1.1rem;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.precio {
+    color: #04e72a;
+    font-weight: bold;
+}
+
+.btn-comprar {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #04e72a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.btn-comprar:hover {
+    background: #236a21;
+
+}
+
+footer {
+background: #333;
+color: white;
+text-align: center;
+padding: 1.5rem;
+margin-top: 2.5rem;
+}
+
+/* ############## */
+/* Usamos Queries */
+/* ############## */
+
+@media (max-width: 768px) {  /* Para tablets */
+    
+    section h2 {
+        font-size: 2rem;
+        padding: 15px 25px;
+    }
+    
+    .oferta-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+}
+
+
+@media (max-width: 480px) {  /* Para celus */
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;  /* Aplila los enlaces de nav */
+        padding: 0.5rem;
+    }
+
+    nav a {
+        margin: 0.5rem 0;  /* Esp vertical e/enlaces */
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        padding: 10px 15px;
+    }
+
+    main h2 {
+        font-size: 1.8rem;
+    }
+
+    .oferta-grid {
+        grid-template-columns: 1fr;   /* 1 sola col para celus */
+        padding: 1rem;
+    }
+
+    .oferta-tarjeta {
+        width: 90%;
+        margin: 0 auto;   /* Centra la tarjeta en horizontal */
+    }
+
+}
+
+
+
+
+/* ############## */
+/* contacto.html  */
+/* ############## */
+
+.section-formulario {
+    max-width: 800px;
+    margin: 3rem auto;  /* Centra la sección del margen sup/inf */
+    padding: 2.5rem;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-align: center;
+}
+
+.section-formulario h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #236a21;
+    background: none;
+    padding: 0;
+    text-shadow: none;
+}
+
+.section-formulario p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+.section-formulario form {
+    display: grid;
+    grid-template-columns: 1fr;  /* Por defecto una sola col */
+    gap: 1.5rem;  
+    text-align: left; 
+}
+
+.formulario {
+    margin-bottom: 0.5rem;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos para los inputs */
+.formulario input, .formulario textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fefefe;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+    transition: border-color 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #249a21;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+    justify-self: center;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #1d5c1b;
+}
+
+/* ############## */
+/* Usamos Queries */
+/* ############## */
+
+@media (min-width: 768px) {
+
+    .section-formulario form {
+        grid-template-columns: 1fr 1fr;  /* Dos col */
+    }
+
+    .btn-submit {
+        grid-template-columns: 1;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    
+    .section-formulario {
+        padding: 1.5rem;
+        margin: 2rem 1rem;
+    }
+    
+    .section-formulario h2 {
+        font-size: 2rem;
+    }
+    
+    .section-formulario p {
+        font-size: 1rem;
+    }
+    
+    .btn-submit {
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+}
+
+
