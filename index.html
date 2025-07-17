@@ -12,19 +12,18 @@
         <img class="logo" src="./assets/img/logo_Gringo's.jpg" alt="logo de la empresa">
         <h1>Gringo's online</h1>
     </header>
-        
-        <nav>          
-                
-            <a href="./pages/inicio.html">Inicio</a>        
-            <a href="./pages/productos.html">Productos</a>        
-            <a href="./pages/ofertas.html">Ofertas</a>        
-            <a href="./pages/carrito.html">Carrito</a>        
-            <a href="./pages/contacto.html">Contacto</a>                
-        </nav>
-    
+         
+    <nav>
+        <a href="./pages/inicio.html">Inicio</a>
+        <a href="./pages/productos.html">Productos</a>
+        <a href="./pages/ofertas.html">Ofertas</a>
+        <a href="./pages/carrito.html">Carrito</a>
+        <a href="./pages/contacto.html">Contacto</a>
+    </nav>
+
     <section class="section-index">
-        <h2>¡Todo lo que buscas, en el momento justo!</h2>
-        <!-- <img src="./assets/img/supermercado_gringos_cover.jpg" alt=""> -->
+        <h2 id="mensaje-bienvenida">¡Todo lo que buscas, en el momento justo!</h2>
+        <button id="btn-cambiar-texto">¡Haz clic aquí!</button>
     </section>
 
     <main>
@@ -32,8 +31,6 @@
 
         <div class="oferta-grid">
             <div class="oferta-tarjeta">
-                <!-- <img src="./assets/img/oferta1.jpg" alt="imagen de producto en oferta"> -->
-                <!-- Por ahora usamos cualquier imagen -->
                 <img src="https://picsum.photos/300/200?random=1" alt="imagen de producto en oferta">
                 <div class="oferta-info">
                     <p class="oferta-titulo">Oferta 1</p>
@@ -41,15 +38,11 @@
                     <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
-            
-            <!--  
-            ## Copiamos el div de las tarjetas por las que necesitemos##
-            Con "grid-template-columns: repeat(auto-fit, minmax(300, 1fr));" dentro del .css no necesitamos agregar ni modificar nada. Crea las col o filas automáticamente al agregar más.            
-            -->
+
             <div class="oferta-tarjeta">
                 <img src="https://picsum.photos/300/200?random=2" alt="imagen de producto en oferta">
                 <div class="oferta-info">
-                    <p class="oferta-titulo">Oferta 1</p>
+                    <p class="oferta-titulo">Oferta 2</p>
                     <p class="precio">$1.500</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
@@ -58,19 +51,18 @@
             <div class="oferta-tarjeta">
                 <img src="https://picsum.photos/300/200?random=3" alt="imagen de producto en oferta">
                 <div class="oferta-info">
-                    <p class="oferta-titulo">Oferta 1</p>
+                    <p class="oferta-titulo">Oferta 3</p>
                     <p class="precio">$1.500</p>
                     <button class="btn-comprar">Comprar</button>
                 </div>
             </div>
         </div>
-
     </main>
-    
 
     <footer>
         <p>&copy; 2025 Gringo's - Todos los derechos reservados</p>
     </footer>
-    
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
