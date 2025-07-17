@@ -1,24 +1,32 @@
+// 🟢 Función global para agregar al carrito (fuera de DOMContentLoaded)
+function agregarAlCarrito(producto) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    const existente = carrito.find(item => item.nombre === producto.nombre);
+
+    if (existente) {
+        existente.cantidad += 1;
+    } else {
+        producto.cantidad = 1;
+        carrito.push(producto);
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    alert(`"${producto.nombre}" se añadió al carrito.`);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
-    // 👉 Cambiar texto del mensaje principal
+    // 🟢 Cambiar mensaje en index.html
     const boton = document.getElementById("btn-cambiar-texto");
     const mensaje = document.getElementById("mensaje-bienvenida");
 
     if (boton && mensaje) {
         boton.addEventListener("click", function () {
             mensaje.textContent = "¡Gracias por visitarnos! Tenemos muchas ofertas para vos.";
-            console.log("Texto cambiado correctamente.");
         });
     }
 
-    // 👉 Función para agregar productos al carrito (localStorage)
-    function agregarAlCarrito(producto) {
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        carrito.push(producto);
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-        alert(`"${producto.nombre}" se añadió al carrito.`);
-    }
-
-    // 👉 Asociar evento a botones "Comprar" ya existentes
+    // 🟢 Botones "Comprar" en ofertas/index
     const botonesComprar = document.querySelectorAll(".btn-comprar");
 
     botonesComprar.forEach((btn) => {
@@ -28,16 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const precioTexto = tarjeta.querySelector(".precio").textContent;
             const precio = parseFloat(precioTexto.replace("$", "").replace(".", "").trim());
 
-            const producto = {
-                nombre,
-                precio
-            };
-
+            const producto = { nombre, precio };
             agregarAlCarrito(producto);
         });
     });
 
-    // 👉 Botón para agregar una nueva tarjeta dinámica
+    // 🟢 Agregar tarjeta nueva dinámicamente (en ofertas.html)
     const btnAgregarOferta = document.getElementById("btn-agregar-oferta");
     const contenedorOfertas = document.getElementById("contenedor-ofertas");
     let contador = 4;
@@ -58,18 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             contenedorOfertas.appendChild(nuevaTarjeta);
 
-            // Evento al botón "Comprar" nuevo
             const botonNuevo = nuevaTarjeta.querySelector(".btn-comprar");
             botonNuevo.addEventListener("click", function () {
                 const nombre = nuevaTarjeta.querySelector(".oferta-titulo").textContent;
                 const precioTexto = nuevaTarjeta.querySelector(".precio").textContent;
                 const precio = parseFloat(precioTexto.replace("$", "").replace(".", "").trim());
 
-                const producto = {
-                    nombre,
-                    precio
-                };
-
+                const producto = { nombre, precio };
                 agregarAlCarrito(producto);
             });
 
@@ -77,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 👉 Validación del formulario de contacto
+    // 🟢 Validación de formulario (contacto.html)
     const form = document.getElementById("form-contacto");
     if (form) {
         const mensajeError = document.getElementById("mensaje-error");
@@ -102,39 +101,127 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-});
 
+    // 🟢 Mostrar productos desde productos.json (productos.html)
+    const contenedorProductos = document.getElementById("contenedor-productos");
 
-// Mostrar carrito si estamos en carrito.html
-const contenedorCarrito = document.getElementById("contenedor-carrito");
-const totalCarrito = document.getElementById("total-carrito");
-const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
+    if (contenedorProductos) {
+        fetch("../data/productos.json")
+            .then(res => res.json())
+            .then(productos => {
+                productos.forEach(producto => {
+                    const tarjeta = document.createElement("div");
+                    tarjeta.classList.add("oferta-tarjeta");
 
-if (contenedorCarrito && totalCarrito && btnVaciarCarrito) {
-    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+                    tarjeta.innerHTML = `
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                        <div class="oferta-info">
+                            <p class="oferta-titulo">${producto.nombre}</p>
+                            <p class="precio">$${producto.precio}</p>
+                            <button class="btn-comprar">Agregar al carrito</button>
+                        </div>
+                    `;
 
-    if (carrito.length === 0) {
-        contenedorCarrito.innerHTML = "<p>Tu carrito está vacío.</p>";
-        totalCarrito.textContent = "";
-    } else {
-        let total = 0;
-        const lista = document.createElement("ul");
+                    const boton = tarjeta.querySelector(".btn-comprar");
+                    boton.addEventListener("click", () => {
+                        agregarAlCarrito({
+                            nombre: producto.nombre,
+                            precio: producto.precio
+                        });
+                    });
 
-        carrito.forEach((producto) => {
-            const item = document.createElement("li");
-            item.textContent = `${producto.nombre} - $${producto.precio}`;
-            lista.appendChild(item);
-            total += producto.precio;
-        });
-
-        contenedorCarrito.appendChild(lista);
-        totalCarrito.textContent = `Total: $${total}`;
+                    contenedorProductos.appendChild(tarjeta);
+                });
+            })
+            .catch(error => {
+                contenedorProductos.innerHTML = "<p>Error al cargar los productos.</p>";
+                console.error("Error al cargar productos.json:", error);
+            });
     }
 
-    // Botón para vaciar carrito
-    btnVaciarCarrito.addEventListener("click", () => {
-        localStorage.removeItem("carrito");
-        contenedorCarrito.innerHTML = "<p>El carrito fue vaciado.</p>";
-        totalCarrito.textContent = "";
-    });
-}
+    // 🟢 Carrito con tabla, botones + y – (carrito.html)
+    const contenedorCarrito = document.getElementById("contenedor-carrito");
+    const totalCarrito = document.getElementById("total-carrito");
+    const btnVaciarCarrito = document.getElementById("btn-vaciar-carrito");
+
+    if (contenedorCarrito && totalCarrito && btnVaciarCarrito) {
+        function renderizarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+            if (carrito.length === 0) {
+                contenedorCarrito.innerHTML = "<p>Tu carrito está vacío.</p>";
+                totalCarrito.textContent = "";
+                return;
+            }
+
+            let total = 0;
+
+            const tabla = document.createElement("table");
+            tabla.innerHTML = `
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            `;
+
+            const tbody = tabla.querySelector("tbody");
+
+            carrito.forEach((producto, index) => {
+                const subtotal = producto.precio * producto.cantidad;
+                total += subtotal;
+
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td data-label="Producto">${producto.nombre}</td>
+                    <td data-label="Precio">$${producto.precio}</td>
+                    <td data-label="Cantidad">${producto.cantidad}</td>
+                    <td data-label="Subtotal">$${subtotal}</td>
+                    <td data-label="Acciones">
+                        <button class="sumar" data-index="${index}">+</button>
+                        <button class="restar" data-index="${index}">–</button>
+                    </td>
+                `;
+                tbody.appendChild(fila);
+            });
+
+            contenedorCarrito.innerHTML = "";
+            contenedorCarrito.appendChild(tabla);
+            totalCarrito.textContent = `Total: $${total}`;
+
+            document.querySelectorAll(".sumar").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const i = parseInt(btn.dataset.index);
+                    carrito[i].cantidad += 1;
+                    localStorage.setItem("carrito", JSON.stringify(carrito));
+                    renderizarCarrito();
+                });
+            });
+
+            document.querySelectorAll(".restar").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const i = parseInt(btn.dataset.index);
+                    if (carrito[i].cantidad > 1) {
+                        carrito[i].cantidad -= 1;
+                    } else {
+                        carrito.splice(i, 1);
+                    }
+                    localStorage.setItem("carrito", JSON.stringify(carrito));
+                    renderizarCarrito();
+                });
+            });
+        }
+
+        renderizarCarrito();
+
+        btnVaciarCarrito.addEventListener("click", () => {
+            localStorage.removeItem("carrito");
+            renderizarCarrito();
+        });
+    }
+});

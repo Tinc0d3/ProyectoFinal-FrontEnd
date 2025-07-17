@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Galletitas Don Satur",
+    "precio": 700,
+    "imagen": "https://picsum.photos/300/200?random=1"
+  },
+  {
+    "id": 2,
+    "nombre": "Chocolates",
+    "precio": 1500,
+    "imagen": "https://picsum.photos/300/200?random=2"
+  },
+  {
+    "id": 3,
+    "nombre": "Caramelos Ácidos",
+    "precio": 900,
+    "imagen": "https://picsum.photos/300/200?random=3"
+  },
+  {
+    "id": 4,
+    "nombre": "Alfajor Jorgito",
+    "precio": 700,
+    "imagen": "https://picsum.photos/300/200?random=4"
+  }
+]
