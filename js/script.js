@@ -46,3 +46,30 @@ document.addEventListener("DOMContentLoaded", function () {
         contador++;
     });
 });
+
+
+// Validación del formulario de contacto
+const form = document.getElementById("form-contacto");
+if (form) {
+    const mensajeError = document.getElementById("mensaje-error");
+
+    form.addEventListener("submit", function (e) {
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const mensaje = document.getElementById("mensaje").value.trim();
+
+        const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+        if (!nombre || !email || !mensaje) {
+            e.preventDefault();
+            mensajeError.textContent = "Todos los campos son obligatorios.";
+            mensajeError.style.display = "block";
+        } else if (!emailValido) {
+            e.preventDefault();
+            mensajeError.textContent = "El correo electrónico no es válido.";
+            mensajeError.style.display = "block";
+        } else {
+            mensajeError.style.display = "none";
+        }
+    });
+}

@@ -1,63 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Gringo's</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="shortcut icon" href="../assets/img/logo_Gringo's.jpg" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - Gringo's</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/logo_Gringo's.jpg" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <img src="../assets/img/logo_Gringo's.jpg" alt="logo de la empresa">
-        <h1>Gringo's Online</h1>
-    </header>
+  <header>
+    <img class="logo" src="../assets/img/logo_Gringo's.jpg" alt="logo de la empresa" />
+    <h1>Gringo's online</h1>
+  </header>
 
-    <nav>               
-        <a href="../index.html">Inicio</a>        
-        <a href="./pages/productos.html">Productos</a>        
-        <a href="./pages/ofertas.html">Ofertas</a>        
-        <a href="./pages/carrito.html">Carrito</a>        
-        <a href="./pages/contacto.html">Contacto</a>                
-    </nav>
+  <nav>
+    <a href="../index.html">Inicio</a>
+    <a href="./productos.html">Productos</a>
+    <a href="./ofertas.html">Ofertas</a>
+    <a href="./carrito.html">Carrito</a>
+    <a href="./contacto.html">Contacto</a>
+  </nav>
 
-    <main>
-        <section class="section-formulario">
-            <h2>¡Contáctanos!</h2>
-            <p>¿Tenés alguna pregunta, sugerencia o necesitas ayuda con tu pedido?. Completa el formulario y nos pondremos en contacto lo antes posible</p>
+  <main class="formulario-contacto">
+    <h2>Contacto</h2>
+    <form id="form-contacto" action="https://formspree.io/f/xgegbdbk" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
 
-            <form action="https://formspree.io/f/mrbqwdyj" method="POST" enctype="multipart/form-data"></form>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required />
 
-                <div class="formulario">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Tu/s nombre/s" required> 
-                </div>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
 
-                <div class="formulario">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Tu/s apellido/s" required>
-                </div>
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="mensaje-error" style="color: red; font-weight: bold; display: none;"></p>
+  </main>
 
-                <div class="formulario">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" placeholder="tu_email@ejemplo.com" required>
-                </div>
+  <footer>
+    <p>&copy; 2025 Gringo's - Todos los derechos reservados</p>
+  </footer>
 
-                <div class="formulario">
-                    <label for="mensaje">Tu mensaje:</label>
-                    <textarea name="mensaje" id="mensaje" rows="6" placeholder="Escribí tu mensaje"></textarea>
-                </div>
-
-
-
-                <button type="submit" class="btn-submit">Enviar mensaje</button>      
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Gringo's - Todos los derechos reservados</p>
-    </footer>
-
+  <script src="../js/script.js"></script>
 </body>
 </html>
