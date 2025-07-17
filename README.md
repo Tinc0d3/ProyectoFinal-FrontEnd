@@ -1,5 +1,5 @@
 
-Pre-entrega.
+Proyecto Final
 
 @Autor: Martin Sonda
 @Fecha creación: 25/05/2025
@@ -12,6 +12,7 @@ Pre-entrega.
 # Tecnologías: 
 - HTML
 - CSS
+- JS
 
 # Propósito
 El objetivo es crear el sitio online de un supermercado para que los clientes puedan hacer sus compras a traves de un carrito de compras. 
