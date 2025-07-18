@@ -1,73 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supermercado Gringo's</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="shortcut icon" href="/assets/img/logo_Gringo's.jpg" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gringo's - Inicio</title>
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <header>
-        <img class="logo" src="./assets/img/logo_Gringo's.jpg" alt="logo de la empresa">
-        <h1>Gringo's online</h1>
-    </header>
-         
-    <nav>
-        <a href="./pages/inicio.html">Inicio</a>
-        <a href="./pages/productos.html">Productos</a>
-        <a href="./pages/ofertas.html">Ofertas</a>
-        <a href="./pages/carrito.html">Carrito</a>
-        <a href="./pages/contacto.html">Contacto</a>
-    </nav>
+  <header>
+    <img class="logo" src="./assets/img/logo_Gringo's.jpg" alt="logo de la empresa">
+    <h1>Gringo's online</h1>
+  </header>
 
-    <section class="section-index">
-        <h2 id="mensaje-bienvenida">¡Todo lo que buscas, en el momento justo!</h2>
-        <button id="btn-cambiar-texto">¡Haz clic aquí!</button>
-    </section>
+  <nav>
+    <a href="./index.html">Inicio</a>
+    <a href="./pages/productos.html">Productos</a>
+    <a href="./pages/carrito.html">Carrito</a>
+    <a href="./pages/contacto.html">Contacto</a>
+  </nav>
 
-    <main>
-        <h2>Ofertas</h2>
+  <main>
+    <h2>🔥 Ofertas destacadas</h2>
+    <div id="contenedor-ofertas" class="productos-grid">
+      <!-- Aquí podrías dejar algunas ofertas fijas o dinámicas -->
+    </div>
+  </main>
 
-        <!-- Botón para agregar tarjetas -->
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <button id="btn-agregar-oferta" class="btn-comprar">Agregar oferta</button>
-        </div>
+  <footer>
+    <p>&copy; 2025 Gringo's - Todos los derechos reservados</p>
+  </footer>
 
-        <div class="oferta-grid" id="contenedor-ofertas">
-            <div class="oferta-tarjeta">
-                <img src="https://picsum.photos/300/200?random=1" alt="imagen de producto en oferta">
-                <div class="oferta-info">
-                    <p class="oferta-titulo">Oferta 1</p>
-                    <p class="precio">$1.500</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-            <div class="oferta-tarjeta">
-                <img src="https://picsum.photos/300/200?random=2" alt="imagen de producto en oferta">
-                <div class="oferta-info">
-                    <p class="oferta-titulo">Oferta 2</p>
-                    <p class="precio">$1.500</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-
-            <div class="oferta-tarjeta">
-                <img src="https://picsum.photos/300/200?random=3" alt="imagen de producto en oferta">
-                <div class="oferta-info">
-                    <p class="oferta-titulo">Oferta 3</p>
-                    <p class="precio">$1.500</p>
-                    <button class="btn-comprar">Comprar</button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Gringo's - Todos los derechos reservados</p>
-    </footer>
-
-    <script src="./js/script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>

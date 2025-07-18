@@ -1,26 +1,402 @@
 [
   {
     "id": 1,
-    "nombre": "Galletitas Don Satur",
-    "precio": 700,
-    "imagen": "https://picsum.photos/300/200?random=1"
+    "nombre": "Gomitas light",
+    "precio": 1446,
+    "imagen": "https://picsum.photos/300/200?random=1",
+    "categoria": "golosinas",
+    "oferta": false
   },
   {
     "id": 2,
-    "nombre": "Chocolates",
-    "precio": 1500,
-    "imagen": "https://picsum.photos/300/200?random=2"
+    "nombre": "Detergente suave",
+    "precio": 2316,
+    "imagen": "https://picsum.photos/300/200?random=2",
+    "categoria": "limpieza",
+    "oferta": false
   },
   {
     "id": 3,
-    "nombre": "Caramelos Ácidos",
-    "precio": 900,
-    "imagen": "https://picsum.photos/300/200?random=3"
+    "nombre": "Caramelos extra",
+    "precio": 694,
+    "imagen": "https://picsum.photos/300/200?random=3",
+    "categoria": "golosinas",
+    "oferta": true
   },
   {
     "id": 4,
-    "nombre": "Alfajor Jorgito",
-    "precio": 700,
-    "imagen": "https://picsum.photos/300/200?random=4"
+    "nombre": "Agua saborizada light",
+    "precio": 1278,
+    "imagen": "https://picsum.photos/300/200?random=4",
+    "categoria": "bebidas",
+    "oferta": false
+  },
+  {
+    "id": 5,
+    "nombre": "Shampoo light",
+    "precio": 2520,
+    "imagen": "https://picsum.photos/300/200?random=5",
+    "categoria": "perfumería",
+    "oferta": false
+  },
+  {
+    "id": 6,
+    "nombre": "Verduras congeladas suave",
+    "precio": 905,
+    "imagen": "https://picsum.photos/300/200?random=6",
+    "categoria": "congelados",
+    "oferta": false
+  },
+  {
+    "id": 7,
+    "nombre": "Papa extra",
+    "precio": 1481,
+    "imagen": "https://picsum.photos/300/200?random=7",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 8,
+    "nombre": "Chupetín premium",
+    "precio": 1679,
+    "imagen": "https://picsum.photos/300/200?random=8",
+    "categoria": "golosinas",
+    "oferta": false
+  },
+  {
+    "id": 9,
+    "nombre": "Papas extra",
+    "precio": 2518,
+    "imagen": "https://picsum.photos/300/200?random=9",
+    "categoria": "snacks",
+    "oferta": false
+  },
+  {
+    "id": 10,
+    "nombre": "Jugo light",
+    "precio": 1512,
+    "imagen": "https://picsum.photos/300/200?random=10",
+    "categoria": "bebidas",
+    "oferta": false
+  },
+  {
+    "id": 11,
+    "nombre": "Jamón cocido light",
+    "precio": 2695,
+    "imagen": "https://picsum.photos/300/200?random=11",
+    "categoria": "fiambres",
+    "oferta": false
+  },
+  {
+    "id": 12,
+    "nombre": "Verduras congeladas extra",
+    "precio": 2912,
+    "imagen": "https://picsum.photos/300/200?random=12",
+    "categoria": "congelados",
+    "oferta": true
+  },
+  {
+    "id": 13,
+    "nombre": "Milanesa suave",
+    "precio": 1024,
+    "imagen": "https://picsum.photos/300/200?random=13",
+    "categoria": "carnicería",
+    "oferta": false
+  },
+  {
+    "id": 14,
+    "nombre": "Jamón cocido premium",
+    "precio": 858,
+    "imagen": "https://picsum.photos/300/200?random=14",
+    "categoria": "fiambres",
+    "oferta": false
+  },
+  {
+    "id": 15,
+    "nombre": "Lavandina light",
+    "precio": 1314,
+    "imagen": "https://picsum.photos/300/200?random=15",
+    "categoria": "limpieza",
+    "oferta": true
+  },
+  {
+    "id": 16,
+    "nombre": "Jabón premium",
+    "precio": 589,
+    "imagen": "https://picsum.photos/300/200?random=16",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 17,
+    "nombre": "Carne picada premium",
+    "precio": 1887,
+    "imagen": "https://picsum.photos/300/200?random=17",
+    "categoria": "carnicería",
+    "oferta": true
+  },
+  {
+    "id": 18,
+    "nombre": "Chupetín clásico",
+    "precio": 1485,
+    "imagen": "https://picsum.photos/300/200?random=18",
+    "categoria": "golosinas",
+    "oferta": false
+  },
+  {
+    "id": 19,
+    "nombre": "Perfume clásico",
+    "precio": 2019,
+    "imagen": "https://picsum.photos/300/200?random=19",
+    "categoria": "perfumería",
+    "oferta": true
+  },
+  {
+    "id": 20,
+    "nombre": "Carne picada suave",
+    "precio": 2437,
+    "imagen": "https://picsum.photos/300/200?random=20",
+    "categoria": "carnicería",
+    "oferta": false
+  },
+  {
+    "id": 21,
+    "nombre": "Asado suave",
+    "precio": 658,
+    "imagen": "https://picsum.photos/300/200?random=21",
+    "categoria": "carnicería",
+    "oferta": false
+  },
+  {
+    "id": 22,
+    "nombre": "Shampoo premium",
+    "precio": 2842,
+    "imagen": "https://picsum.photos/300/200?random=22",
+    "categoria": "perfumería",
+    "oferta": false
+  },
+  {
+    "id": 23,
+    "nombre": "Shampoo extra",
+    "precio": 1737,
+    "imagen": "https://picsum.photos/300/200?random=23",
+    "categoria": "perfumería",
+    "oferta": false
+  },
+  {
+    "id": 24,
+    "nombre": "Detergente premium",
+    "precio": 2732,
+    "imagen": "https://picsum.photos/300/200?random=24",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 25,
+    "nombre": "Tomate premium",
+    "precio": 1014,
+    "imagen": "https://picsum.photos/300/200?random=25",
+    "categoria": "frutas y verduras",
+    "oferta": true
+  },
+  {
+    "id": 26,
+    "nombre": "Manzana suave",
+    "precio": 2997,
+    "imagen": "https://picsum.photos/300/200?random=26",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 27,
+    "nombre": "Manzana light",
+    "precio": 2447,
+    "imagen": "https://picsum.photos/300/200?random=27",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 28,
+    "nombre": "Maní salado premium",
+    "precio": 895,
+    "imagen": "https://picsum.photos/300/200?random=28",
+    "categoria": "snacks",
+    "oferta": false
+  },
+  {
+    "id": 29,
+    "nombre": "Salame premium",
+    "precio": 976,
+    "imagen": "https://picsum.photos/300/200?random=29",
+    "categoria": "fiambres",
+    "oferta": false
+  },
+  {
+    "id": 30,
+    "nombre": "Esponja suave",
+    "precio": 1731,
+    "imagen": "https://picsum.photos/300/200?random=30",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 31,
+    "nombre": "Esponja suave",
+    "precio": 1681,
+    "imagen": "https://picsum.photos/300/200?random=31",
+    "categoria": "limpieza",
+    "oferta": true
+  },
+  {
+    "id": 32,
+    "nombre": "Palitos premium",
+    "precio": 2280,
+    "imagen": "https://picsum.photos/300/200?random=32",
+    "categoria": "snacks",
+    "oferta": false
+  },
+  {
+    "id": 33,
+    "nombre": "Manzana suave",
+    "precio": 2178,
+    "imagen": "https://picsum.photos/300/200?random=33",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 34,
+    "nombre": "Detergente premium",
+    "precio": 1794,
+    "imagen": "https://picsum.photos/300/200?random=34",
+    "categoria": "limpieza",
+    "oferta": true
+  },
+  {
+    "id": 35,
+    "nombre": "Jabón líquido suave",
+    "precio": 2748,
+    "imagen": "https://picsum.photos/300/200?random=35",
+    "categoria": "perfumería",
+    "oferta": false
+  },
+  {
+    "id": 36,
+    "nombre": "Chupetín light",
+    "precio": 2783,
+    "imagen": "https://picsum.photos/300/200?random=36",
+    "categoria": "golosinas",
+    "oferta": false
+  },
+  {
+    "id": 37,
+    "nombre": "Desodorante de piso suave",
+    "precio": 969,
+    "imagen": "https://picsum.photos/300/200?random=37",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 38,
+    "nombre": "Shampoo extra",
+    "precio": 2281,
+    "imagen": "https://picsum.photos/300/200?random=38",
+    "categoria": "perfumería",
+    "oferta": false
+  },
+  {
+    "id": 39,
+    "nombre": "Bife premium",
+    "precio": 1549,
+    "imagen": "https://picsum.photos/300/200?random=39",
+    "categoria": "carnicería",
+    "oferta": true
+  },
+  {
+    "id": 40,
+    "nombre": "Detergente light",
+    "precio": 514,
+    "imagen": "https://picsum.photos/300/200?random=40",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 41,
+    "nombre": "Lechuga premium",
+    "precio": 950,
+    "imagen": "https://picsum.photos/300/200?random=41",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 42,
+    "nombre": "Plato premium",
+    "precio": 2211,
+    "imagen": "https://picsum.photos/300/200?random=42",
+    "categoria": "bazar",
+    "oferta": true
+  },
+  {
+    "id": 43,
+    "nombre": "Queso suave",
+    "precio": 892,
+    "imagen": "https://picsum.photos/300/200?random=43",
+    "categoria": "fiambres",
+    "oferta": false
+  },
+  {
+    "id": 44,
+    "nombre": "Esponja clásico",
+    "precio": 1716,
+    "imagen": "https://picsum.photos/300/200?random=44",
+    "categoria": "limpieza",
+    "oferta": false
+  },
+  {
+    "id": 45,
+    "nombre": "Hamburguesas premium",
+    "precio": 930,
+    "imagen": "https://picsum.photos/300/200?random=45",
+    "categoria": "congelados",
+    "oferta": false
+  },
+  {
+    "id": 46,
+    "nombre": "Carne picada extra",
+    "precio": 2319,
+    "imagen": "https://picsum.photos/300/200?random=46",
+    "categoria": "carnicería",
+    "oferta": true
+  },
+  {
+    "id": 47,
+    "nombre": "Vaso clásico",
+    "precio": 1245,
+    "imagen": "https://picsum.photos/300/200?random=47",
+    "categoria": "bazar",
+    "oferta": true
+  },
+  {
+    "id": 48,
+    "nombre": "Papa extra",
+    "precio": 1341,
+    "imagen": "https://picsum.photos/300/200?random=48",
+    "categoria": "frutas y verduras",
+    "oferta": false
+  },
+  {
+    "id": 49,
+    "nombre": "Carne picada light",
+    "precio": 2614,
+    "imagen": "https://picsum.photos/300/200?random=49",
+    "categoria": "carnicería",
+    "oferta": false
+  },
+  {
+    "id": 50,
+    "nombre": "Chocolate light",
+    "precio": 1890,
+    "imagen": "https://picsum.photos/300/200?random=50",
+    "categoria": "golosinas",
+    "oferta": true
   }
 ]
